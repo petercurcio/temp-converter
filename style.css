@@ -1,7 +1,11 @@
 #main-title {
-  font-size: 100%;
+  font-size: 200%;
 }
 
-.p-text {
-  font-style: italic;
+.body-text {
+  font-size: 125%;
 }
+
+/* .p-text {
+  font-style: italic;
+} */
