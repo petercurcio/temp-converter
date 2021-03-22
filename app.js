@@ -42,6 +42,12 @@ function verifyClick() {
   console.log("The submit button has been clicked.");
 }
 
+document.getElementById("clear-button").addEventListener("click", clearInput);
+
+function clearInput() {
+  document.getElementById("temp-f").value = "";
+  document.getElementById("new-temp").innerHTML = "";
+}
 //document.getElementById("submit-button").addEventListener("click", convertFarenheitToCelsius(temp));
 
 // function testFunction() {
