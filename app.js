@@ -14,6 +14,10 @@ clearButton.addEventListener("click", clearInput);
 // Funcs
 function convertFarenheitToCelsius() {
   let temp = document.getElementById("temp-f").value;
+  if (!temp) {
+    alert("No value entered.");
+    return
+  }
   newTemp = ((temp - 32) * 5/9).toPrecision(3);
   document.getElementById("new-temp").innerHTML = newTemp + " ºC";
 
@@ -21,10 +25,18 @@ function convertFarenheitToCelsius() {
   if (debug) { console.log("newTemp is: " + newTemp); }
 }
 
-function convert() {
-  let oldTemp = document.getElementById("temp-f").value;
-  let newTemp2 = (oldTemp - 32) * 5/9;
-  document.getElementById("new-temp").innerHTML = newTemp2;
+function convertCelsiusToFarenheit() {
+  let temp = document.getElementById("temp-c").value;
+  if (!temp) {
+    alert("No value entered.");
+    return
+  }
+  newTemp = ((temp - 32) * 5/9).toPrecision(3);
+  document.getElementById("new-temp").innerHTML = newTemp + " ºF";
+
+  if (debug) { console.log((temp - 32) * 5/9); }
+  if (debug) { console.log("newTemp is: " + newTemp); }
+
 }
 
 function verifyClick() {
@@ -34,8 +46,4 @@ function verifyClick() {
 function clearInput() {
   document.getElementById("temp-f").value = "";
   document.getElementById("new-temp").innerHTML = "";
-}
-
-function convertCelsiusToFarenheit(temp) {
-
 }
