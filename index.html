@@ -10,14 +10,18 @@
   <body>
     <h1 id="main-title">Fahrenheit to Celsius - ºF to ºC conversion</h1>
     <hr />
+    <button id="f-to-c-btn" class="btn-toggle f-to-c">Farenheit to Celsius</button>
+    <button id="c-to-f-btn" class="btn-toggle c-to-f">Celsius to Farenheit</button>
     <div class="body-text">
-      <label for="temp-f">Temperature (in Fahrenheit):</label>
-      <input type="number" id="temp-f" class="input"></input>
+      <div>
+        <label for="temp-f">Fahrenheit:</label>
+        <input id="temp-f" class="input"></input> ºF
+      </div>
       <!-- <button id="submit-button" onclick="convertFarenheitToCelsius(document.getElementById('temp-f').value)">Submit</button> -->
     </div>
     <div class="body-text">
-      <label for="temp-c">Temperature (in Celsius):</label>
-      <input type="number" id="temp-c" class="input"></input>
+      <label for="temp-c">Celsius:</label>
+      <input id="temp-c" class="input" readonly></input> ºC
       <!-- <button id="submit-button" onclick="convertFarenheitToCelsius(document.getElementById('temp-f').value)">Submit</button> -->
     </div>
     <div>

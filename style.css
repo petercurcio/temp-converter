@@ -6,6 +6,19 @@
   font-size: 125%;
 }
 
+button {
+  margin: 10px 1px;
+  padding: 10px 5px;
+  border-width: 1px;
+  border-color: #ddd;
+  
+}
+
 /* .p-text {
   font-style: italic;
 } */
+
+.active-button {
+  background-color: #3182ce;
+  color: #fff;
+}
