@@ -11,7 +11,7 @@ button {
   padding: 10px 5px;
   border-width: 1px;
   border-color: #ddd;
-  
+
 }
 
 /* .p-text {
@@ -21,4 +21,9 @@ button {
 .active-button {
   background-color: #3182ce;
   color: #fff;
+}
+
+input:read-only {
+  background-color: #f5f5f5;
+  border: 0;
 }

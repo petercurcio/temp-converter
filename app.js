@@ -23,7 +23,7 @@ function convertFarenheitToCelsius() {
     return;
   }
   newTemp = ((temp - 32) * 5/9).toPrecision(3);
-  document.getElementById("new-temp").innerHTML = newTemp + " ºC";
+  //document.getElementById("new-temp").innerHTML = newTemp + " ºC";
   document.getElementById("temp-c").value = newTemp;
 
   if (debug) { console.log((temp - 32) * 5/9); }
@@ -50,7 +50,7 @@ function verifyClick() {
 
 function clearInput() {
   document.getElementById("temp-f").value = "";
-  document.getElementById("new-temp").innerHTML = "";
+  //document.getElementById("new-temp").innerHTML = "";
 }
 
 function setMode(el) {
@@ -60,9 +60,18 @@ function setMode(el) {
     //fcBtn.classList.add("active-button");
     document.getElementById("f-to-c-btn").classList.add("active-button");
     document.getElementById("c-to-f-btn").classList.remove("active-button");
+    document.getElementById("temp-f").value = "";
+    document.getElementById("temp-c").value = "";
+    document.getElementById("temp-c").readOnly = true;
+    document.getElementById("temp-f").readOnly = false;
+
   } else {
     document.getElementById("f-to-c-btn").classList.remove("active-button");
     document.getElementById("c-to-f-btn").classList.add("active-button");
+    document.getElementById("temp-f").value = "";
+    document.getElementById("temp-c").value = "";
+    document.getElementById("temp-f").readOnly = true;
+    document.getElementById("temp-c").readOnly = false;
   }
 
   // if button is active, deactivate
