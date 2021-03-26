@@ -10,7 +10,7 @@ const fcBtn = document.getElementById("f-to-c-btn");
 const cfBtn = document.getElementById("c-to-f-btn");
 
 // Event listeners
-submitButton.addEventListener("click", convertFarenheitToCelsius);
+submitButton.addEventListener("click", chooseConversion);
 submitButton.addEventListener("click", verifyClick);
 clearButton.addEventListener("click", clearInput);
 fcBtn.addEventListener("click", setMode);
@@ -26,6 +26,14 @@ function convertFarenheitToCelsius() {
 
   if (debug) { console.log((tempF - 32) * 5/9); }
   if (debug) { console.log("newTemp is: " + newTemp); }
+}
+
+function chooseConversion() {
+  if (fcBtn.classList.contains("active-button")) {
+    convertFarenheitToCelsius();
+  } else {
+    convertCelsiusToFarenheit();
+  }
 }
 
 function convertCelsiusToFarenheit() {
