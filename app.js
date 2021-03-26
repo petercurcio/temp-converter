@@ -2,7 +2,8 @@
 let debug = false;
 
 // Vars
-let temp = document.getElementById("temp-f").value;
+let tempF = document.getElementById("temp-f");
+let tempC = document.getElementById("temp-c");
 const submitButton = document.getElementById("submit-button");
 const clearButton = document.getElementById("clear-button");
 const fcBtn = document.getElementById("f-to-c-btn");
@@ -17,31 +18,25 @@ cfBtn.addEventListener("click", setMode);
 
 // Funcs
 function convertFarenheitToCelsius() {
-  let temp = document.getElementById("temp-f").value;
-  if (!temp) {
+  if (!tempF.value) {
     alert("No value entered.");
     return;
   }
-  newTemp = ((temp - 32) * 5/9).toPrecision(3);
-  //document.getElementById("new-temp").innerHTML = newTemp + " ºC";
-  document.getElementById("temp-c").value = newTemp;
+  tempC.value = ((tempF.value - 32) * 5/9).toPrecision(3);
 
-  if (debug) { console.log((temp - 32) * 5/9); }
+  if (debug) { console.log((tempF - 32) * 5/9); }
   if (debug) { console.log("newTemp is: " + newTemp); }
 }
 
 function convertCelsiusToFarenheit() {
-  let temp = document.getElementById("temp-c").value;
-  if (!temp) {
+  if (!tempC.value) {
     alert("No value entered.");
     return;
   }
-  newTemp = ((temp - 32) * 5/9).toPrecision(3);
-  document.getElementById("new-temp").innerHTML = newTemp + " ºF";
+  tempF.value = ((tempC.value - 32) * 5/9).toPrecision(3);
 
-  if (debug) { console.log((temp - 32) * 5/9); }
+  if (debug) { console.log((tempC - 32) * 5/9); }
   if (debug) { console.log("newTemp is: " + newTemp); }
-
 }
 
 function verifyClick() {
@@ -49,31 +44,25 @@ function verifyClick() {
 }
 
 function clearInput() {
-  document.getElementById("temp-f").value = "";
-  //document.getElementById("new-temp").innerHTML = "";
+  tempF.value = "";
+  tempC.value = "";
 }
 
 function setMode(el) {
   console.log(el);
   if ( el.target.id === "f-to-c-btn" ){
-    //let fcStatus = document.getElementById("f-to-c-btn").value;
-    //fcBtn.classList.add("active-button");
-    document.getElementById("f-to-c-btn").classList.add("active-button");
-    document.getElementById("c-to-f-btn").classList.remove("active-button");
-    document.getElementById("temp-f").value = "";
-    document.getElementById("temp-c").value = "";
-    document.getElementById("temp-c").readOnly = true;
-    document.getElementById("temp-f").readOnly = false;
-
+    fcBtn.classList.add("active-button");
+    cfBtn.classList.remove("active-button");
+    tempF.value = "";
+    tempC.value = "";
+    tempC.readOnly = true;
+    tempF.readOnly = false;
   } else {
-    document.getElementById("f-to-c-btn").classList.remove("active-button");
-    document.getElementById("c-to-f-btn").classList.add("active-button");
-    document.getElementById("temp-f").value = "";
-    document.getElementById("temp-c").value = "";
-    document.getElementById("temp-f").readOnly = true;
-    document.getElementById("temp-c").readOnly = false;
+    fcBtn.classList.remove("active-button");
+    cfBtn.classList.add("active-button");
+    tempF.value = "";
+    tempC.value = "";
+    tempF.readOnly = true;
+    tempC.readOnly = false;
   }
-
-  // if button is active, deactivate
-  // if button is inactive, activate
 }
